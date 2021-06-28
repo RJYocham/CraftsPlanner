@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftsPlanner.WebMVC", "CraftsPlanner.WebMVC\CraftsPlanner.WebMVC.csproj", "{2E621334-AA64-4B1A-8CA1-D728D5270BC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftsPlanner.Data", "CraftsPlanner.Data\CraftsPlanner.Data.csproj", "{07A04E72-6E0D-4682-9E63-FC95B6D6F554}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftsPlanner.Models", "CraftsPlanner.Models\CraftsPlanner.Models.csproj", "{1668B262-9CFE-4131-993A-0B93E2C05F17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftsPlanner.Services", "CraftsPlanner.Services\CraftsPlanner.Services.csproj", "{C1BB8669-D33D-4AF1-931A-65946AF7B4E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{2E621334-AA64-4B1A-8CA1-D728D5270BC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E621334-AA64-4B1A-8CA1-D728D5270BC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E621334-AA64-4B1A-8CA1-D728D5270BC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07A04E72-6E0D-4682-9E63-FC95B6D6F554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07A04E72-6E0D-4682-9E63-FC95B6D6F554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07A04E72-6E0D-4682-9E63-FC95B6D6F554}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07A04E72-6E0D-4682-9E63-FC95B6D6F554}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1668B262-9CFE-4131-993A-0B93E2C05F17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1668B262-9CFE-4131-993A-0B93E2C05F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1668B262-9CFE-4131-993A-0B93E2C05F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1668B262-9CFE-4131-993A-0B93E2C05F17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1BB8669-D33D-4AF1-931A-65946AF7B4E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1BB8669-D33D-4AF1-931A-65946AF7B4E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1BB8669-D33D-4AF1-931A-65946AF7B4E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1BB8669-D33D-4AF1-931A-65946AF7B4E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

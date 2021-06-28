@@ -174,7 +174,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -251,6 +250,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CraftsPlanner.Data\CraftsPlanner.Data.csproj">
+      <Project>{07a04e72-6e0d-4682-9e63-fc95b6d6f554}</Project>
+      <Name>CraftsPlanner.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CraftsPlanner.Models\CraftsPlanner.Models.csproj">
+      <Project>{1668b262-9cfe-4131-993a-0b93e2c05f17}</Project>
+      <Name>CraftsPlanner.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CraftsPlanner.Services\CraftsPlanner.Services.csproj">
+      <Project>{c1bb8669-d33d-4af1-931a-65946af7b4e2}</Project>
+      <Name>CraftsPlanner.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
