@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using CraftsPlanner.WebMVC.Models;
+using CraftsPlanner.Data;
 
 namespace CraftsPlanner.WebMVC
 {
