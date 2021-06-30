@@ -55,6 +55,21 @@ namespace CraftsPlanner.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateProjectService();
+            var detail = service.GetProjectById(id);
+            var model =
+                new ProjectEdit
+                {
+                    ProjectId = detail.ProjectId,
+                    ProjectName = detail.ProjectName,
+                    Source = detail.Source
+                };
+            return View(model);
+        }
+
+
         private ProjectService CreateProjectService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

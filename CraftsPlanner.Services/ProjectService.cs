@@ -74,8 +74,24 @@ namespace CraftsPlanner.Services
                         //Difficulty = entity.Difficulty,
                         //Plan = entity.Plan,
                         //Materials = entity.Materials,
-                        //Cost&Budget = entity.Cost + " / " + entity.Budget,
+                        //Cost/Budget = entity.Cost + " / " + entity.Budget,
                     };
+            }
+        }
+
+        public bool updateProject(ProjectEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Projects
+                        .Single(e => e.ProjectId == model.ProjectId && e.OwnerId == _userId);
+                entity.ProjectName = model.ProjectName;
+                entity.Source = model.Source;
+                //add other details to update once made
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }
