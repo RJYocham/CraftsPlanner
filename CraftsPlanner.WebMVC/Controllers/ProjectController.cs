@@ -47,6 +47,14 @@ namespace CraftsPlanner.WebMVC.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateProjectService();
+            var model = svc.GetProjectById(id);
+
+            return View(model);
+        }
+
         private ProjectService CreateProjectService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

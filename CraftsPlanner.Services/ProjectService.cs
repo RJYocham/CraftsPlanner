@@ -55,5 +55,28 @@ namespace CraftsPlanner.Services
                 return query.ToArray();
             }
         }
+
+        public ProjectDetail GetProjectById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Projects
+                        .Single(e => e.ProjectId == id && e.OwnerId == _userId);
+                return
+                    new ProjectDetail
+                    {
+                        ProjectId = entity.ProjectId,
+                        ProjectName = entity.ProjectName,
+                        Source = entity.Source,
+                        //Categories = entity.Categories,
+                        //Difficulty = entity.Difficulty,
+                        //Plan = entity.Plan,
+                        //Materials = entity.Materials,
+                        //Cost&Budget = entity.Cost + " / " + entity.Budget,
+                    };
+            }
+        }
     }
 }
