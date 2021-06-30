@@ -69,6 +69,29 @@ namespace CraftsPlanner.WebMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ProjectEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.ProjectId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateProjectService();
+
+            if (service.updateProject(model))
+            {
+                TempData["SaveResult"] = "Your project was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your project cold not be updated.");
+            return RedirectToAction("Index");
+        }
 
         private ProjectService CreateProjectService()
         {
