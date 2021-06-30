@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProjectService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CraftsPlanner.Data\CraftsPlanner.Data.csproj">
+      <Project>{07a04e72-6e0d-4682-9e63-fc95b6d6f554}</Project>
+      <Name>CraftsPlanner.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CraftsPlanner.Models\CraftsPlanner.Models.csproj">
+      <Project>{1668b262-9cfe-4131-993a-0b93e2c05f17}</Project>
+      <Name>CraftsPlanner.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
