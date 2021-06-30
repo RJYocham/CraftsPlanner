@@ -32,17 +32,26 @@ namespace CraftsPlanner.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ProjectCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+
+            var service = CreateProjectService();
+
+            if (service.CreateProject(model))
             {
-                return View(model);
+                TempData["SaveResult"] = "Your project was created.";
+                return RedirectToAction("Index");
             }
 
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ProjectService(userId);
-
-            service.CreateProject(model);
+            ModelState.AddModelError("", "Project could not be created.");
 
             return RedirectToAction("Index");
+        }
+
+        private ProjectService CreateProjectService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ProjectService(userId);
+            return service;
         }
     }
 }
