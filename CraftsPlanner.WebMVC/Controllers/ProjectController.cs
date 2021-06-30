@@ -93,6 +93,26 @@ namespace CraftsPlanner.WebMVC.Controllers
             return RedirectToAction("Index");
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateProjectService();
+            var model = svc.GetProjectById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteProject(int id)
+        {
+            var service = CreateProjectService();
+            service.DeleteProject(id);
+            TempData["SaveResult"] = "Your project was deleted";
+            return RedirectToAction("Index");
+        }
+
         private ProjectService CreateProjectService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
