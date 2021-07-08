@@ -21,12 +21,13 @@ namespace CraftsPlanner.Data
         [Required]
         public string Source { get; set; }
 
-        //public List<Category> Categories { get; set; }
+        public List<Category> Categories { get; set; }
+        public List<Group> Groups { get; set; }
+
         //public int Difficulty { get; set; }
         //public List<Material> Materials { get; set; }
         //public int Budget { get; set; }
         //public int Cost { get; set; }
-        //public int Plan { get; set; }
     }
 }
                                                                        
