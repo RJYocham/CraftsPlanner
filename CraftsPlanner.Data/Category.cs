@@ -13,9 +13,7 @@ namespace CraftsPlanner.Data
     {
         [Key]
         public int CategoryId { get; set; }
-
-        public Guid OwnerId { get; set; }
-
+           
         [Required]
         public string CategoryName { get; set; }
 

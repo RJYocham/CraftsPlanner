@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CraftsPlanner.Models.CategoryGroup
 {
-    class CGroupCreate
+    public class CGroupCreate
     {
+        public string CGroupName { get; set; }
     }
 }

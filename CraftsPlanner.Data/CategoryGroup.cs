@@ -11,7 +11,9 @@ namespace CraftsPlanner.Data
     public class CategoryGroup
     {
         [Key]
-        public int CatGroupId { get; set; }
+        public int CGroupId { get; set; }
+
+        public Guid OwnerId { get; set; }
 
         [Required]
         public string CGroupName { get; set; }
