@@ -22,8 +22,11 @@ namespace CraftsPlanner.Data
         public string Source { get; set; }
 
         public List<Category> Categories { get; set; }
-        public List<Group> Groups { get; set; }
+        public List<ToDoGroup> Groups { get; set; }
 
+        public DateTimeOffset Created { get; set; }
+
+        //public List<Progress> ProgressList { get; set; }
         //public int Difficulty { get; set; }
         //public List<Material> Materials { get; set; }
         //public int Budget { get; set; }

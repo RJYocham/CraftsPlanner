@@ -55,11 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs" />
-    <Compile Include="Group.cs" />
+    <Compile Include="CategoryGroup.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Task.cs" />
+    <Compile Include="ToDo.cs" />
+    <Compile Include="ToDoGroup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

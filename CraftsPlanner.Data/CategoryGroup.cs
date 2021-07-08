@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 
 namespace CraftsPlanner.Data
 {
-    public class Task
+    //split into two??
+    public class CategoryGroup
     {
         [Key]
-        public int TaskId { get; set; }
+        public int CatGroupId { get; set; }
 
         [Required]
-        public string TaskName { get; set; }
-        public string TaskDescription { get; set; }
+        public string CGroupName { get; set; }
 
-        public bool IsCompleted { get; set; }
+
+        public List<Category> Categories { get; set; }
     }
 }
