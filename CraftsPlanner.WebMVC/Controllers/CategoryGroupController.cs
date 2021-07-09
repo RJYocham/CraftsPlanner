@@ -45,7 +45,10 @@ namespace CraftsPlanner.WebMVC.Controllers
             return RedirectToAction("Index");
         }
 
-
+        //public PartialViewResult Sidebar()
+        //{
+        //    return PartialView();
+        //}
 
         private CGroupService CreateCGroupService()
         {

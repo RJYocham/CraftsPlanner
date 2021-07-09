@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Projects</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("+New Project", "Create")
 </p>
 
 @if (TempData.ContainsKey("SaveResult"))
@@ -21,11 +21,24 @@
     </div>
 }
 
-<table class="table">
+
+@*put category menu here*@
+@*<div>
+   <h5>
+       Categories
+   </h5>
+    <section>
+        category groups// for each category group - list of categories
+    </section>
+</div>*@
+
+
+
+<table class="table table-hover">
     <tr>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.ProjectId)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.ProjectName)
         </th>
@@ -34,13 +47,13 @@
         </th>
         <th></th>
     </tr>
-
+    
     @foreach (var item in Model)
     {
         <tr>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.ProjectId)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.ProjectName)
             </td>
@@ -48,7 +61,9 @@
                 @Html.DisplayFor(modelItem => item.Source)
             </td>
             <td>
+                @*move edit to project page*@
                 @Html.ActionLink("Edit", "Edit", new { id=item.ProjectId }) |
+                @*switch to "project page" instead of details*@
                 @Html.ActionLink("Details", "Details", new { id = item.ProjectId }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.ProjectId })
             </td>
