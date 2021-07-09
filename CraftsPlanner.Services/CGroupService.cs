@@ -53,5 +53,53 @@ namespace CraftsPlanner.Services
                 return query.ToArray();
             }
         }
+
+        public CGroupDetail GetCGroupById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .CGroups
+                        .Single(e => e.CGroupId == id && e.OwnerId == _userId);
+                return
+                    new CGroupDetail
+                    {
+                        CGroupId = entity.CGroupId,
+                        CGroupName = entity.CGroupName
+                        //Categories = 
+                    };
+            }
+        }
+
+        public bool updateCGroup(CGroupEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .CGroups
+                        .Single(e => e.CGroupId == model.CGroupId && e.OwnerId == _userId);
+                entity.CGroupName = model.CGroupName;
+                //add other details to update once made
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteCGroup(int CGroupId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .CGroups
+                        .Single(e => e.CGroupId == CGroupId && e.OwnerId == _userId);
+
+                ctx.CGroups.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
