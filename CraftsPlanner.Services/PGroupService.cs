@@ -65,7 +65,7 @@ namespace CraftsPlanner.Services
             }
         }
 
-        public bool updateElement(PGroupEdit model)
+        public bool updatePGroup(PGroupEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {

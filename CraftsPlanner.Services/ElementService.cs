@@ -10,7 +10,7 @@ namespace CraftsPlanner.Services
 {
     public class ElementService
     {
-        public bool CreateProject(ElementCreate model)
+        public bool CreateElement(ElementCreate model)
         {
             var entity =
                 new Element()
@@ -26,7 +26,7 @@ namespace CraftsPlanner.Services
             }
         }
 
-        public IEnumerable<ElementListItem> GetProjects()
+        public IEnumerable<ElementListItem> GetElements()
         {
             using (var ctx = new ApplicationDbContext())
             {
