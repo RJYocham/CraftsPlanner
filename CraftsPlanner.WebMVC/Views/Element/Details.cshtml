@@ -1,0 +1,58 @@
+﻿@model CraftsPlanner.Models.Element.ElementDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ElementDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ElementId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ElementId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ElementName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ElementName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ElementDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ElementDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PGroupId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PGroupId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsCompleted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsCompleted)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

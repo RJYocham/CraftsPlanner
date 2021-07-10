@@ -254,11 +254,19 @@
     <Content Include="Views\Category\Details.cshtml" />
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\Element\Index.cshtml" />
+    <Content Include="Views\Element\Create.cshtml" />
+    <Content Include="Views\Element\Details.cshtml" />
+    <Content Include="Views\Element\Edit.cshtml" />
+    <Content Include="Views\Element\Delete.cshtml" />
+    <Content Include="Views\PGroup\Index.cshtml" />
+    <Content Include="Views\PGroup\Create.cshtml" />
+    <Content Include="Views\PGroup\Details.cshtml" />
+    <Content Include="Views\PGroup\Edit.cshtml" />
+    <Content Include="Views\PGroup\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Element\" />
-    <Folder Include="Views\PGroup\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
