@@ -16,5 +16,9 @@ namespace CraftsPlanner.Models.Category
         [Display(Name ="Category")]
         public string CategoryName { get; set; }
 
+        [Required]
+        public int CategoryGroup { get; set; }
+        //public virtual CategoryGroup CategoryGroup { get; set; }
+
     }
 }

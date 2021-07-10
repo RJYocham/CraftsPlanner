@@ -19,7 +19,7 @@ namespace CraftsPlanner.Data
 
         [Required]
         public int CGroupId { get; set; }
-        public virtual CategoryGroup CategoryGroup { get; set }
+        public virtual CategoryGroup CategoryGroup { get; set; }
 
         //public List<Project> Projects { get; set; }
     }
