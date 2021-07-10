@@ -19,6 +19,6 @@ namespace CraftsPlanner.Data
         public string CGroupName { get; set; }
 
 
-        public List<Category> Categories { get; set; }
+        public virtual List<Category> Categories { get; set; }
     }
 }

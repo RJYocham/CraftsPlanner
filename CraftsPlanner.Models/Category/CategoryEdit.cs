@@ -5,22 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CraftsPlanner.Data
+namespace CraftsPlanner.Models.Category
 {
-    //combine with tasks?
-
-    public class Category
+    public class CategoryEdit
     {
-        [Key]
         public int CategoryId { get; set; }
-           
         [Required]
+        [Display(Name = "Category")]
         public string CategoryName { get; set; }
-
-        [Required]
-        public int CGroupId { get; set; }
-        public virtual CategoryGroup CategoryGroup { get; set }
-
-        //public List<Project> Projects { get; set; }
     }
 }

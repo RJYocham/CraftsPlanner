@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CraftsPlanner.Models.Category;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,6 @@ namespace CraftsPlanner.Models.CategoryGroup
     {
         public int CGroupId { get; set; }
         public string CGroupName { get; set; }
-        //public List<Category> Categories { get; set; }
+        public List<CategoryListItem> Categories { get; set; }
     }
 }

@@ -5,15 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CraftsPlanner.Models.CategoryGroup
+namespace CraftsPlanner.Models.Category
 {
-    public class CGroupCreate
+    public class CategoryCreate
     {
         [Key]
-        public int CGroupId { get; set; }
-        
+        public int CategoryId { get; set; }
+
         [Required]
-        [Display(Name = "Group")]
-        public string CGroupName { get; set; }
+        [Display(Name ="Category")]
+        public string CategoryName { get; set; }
+
     }
 }
