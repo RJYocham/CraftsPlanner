@@ -56,6 +56,8 @@
   <ItemGroup>
     <Compile Include="CategoryService.cs" />
     <Compile Include="CGroupService.cs" />
+    <Compile Include="ElementService.cs" />
+    <Compile Include="PGroupService.cs" />
     <Compile Include="ProjectService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

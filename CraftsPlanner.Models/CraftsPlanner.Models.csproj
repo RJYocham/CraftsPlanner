@@ -62,6 +62,14 @@
     <Compile Include="Category\CategoryDetail.cs" />
     <Compile Include="Category\CategoryEdit.cs" />
     <Compile Include="Category\CategoryListItem.cs" />
+    <Compile Include="Element\ElementCreate.cs" />
+    <Compile Include="Element\ElementDetail.cs" />
+    <Compile Include="Element\ElementEdit.cs" />
+    <Compile Include="Element\ElementListItem.cs" />
+    <Compile Include="ProjectGroup\PGroupCreate.cs" />
+    <Compile Include="ProjectGroup\PGroupDetail.cs" />
+    <Compile Include="ProjectGroup\PGroupEdit.cs" />
+    <Compile Include="ProjectGroup\PGroupListItem.cs" />
     <Compile Include="Project\ProjectCreate.cs" />
     <Compile Include="Project\ProjectDetail.cs" />
     <Compile Include="Project\ProjectEdit.cs" />
@@ -72,8 +80,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ProjectElement\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
