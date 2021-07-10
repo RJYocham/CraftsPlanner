@@ -1,4 +1,5 @@
 ﻿using CraftsPlanner.Data;
+using CraftsPlanner.Models.Category;
 using CraftsPlanner.Models.CategoryGroup;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace CraftsPlanner.Services
     {
         private readonly Guid _userId;
 
+        public CGroupService() { }
         public CGroupService(Guid userId)
         {
             _userId = userId;
@@ -48,7 +50,7 @@ namespace CraftsPlanner.Services
                                     CGroupId = e.CGroupId,
                                     CGroupName = e.CGroupName
                                 }
-                                );
+                                ); 
 
                 return query.ToArray();
             }
@@ -66,7 +68,12 @@ namespace CraftsPlanner.Services
                     new CGroupDetail
                     {
                         CGroupId = entity.CGroupId,
-                        CGroupName = entity.CGroupName
+                        CGroupName = entity.CGroupName,
+                        Categories = entity.Categories.Select(x => new CategoryDetail 
+                            {  
+                                CategoryName = x.CategoryName 
+                            }).ToList(),
+
                         //Categories = 
                     };
             }

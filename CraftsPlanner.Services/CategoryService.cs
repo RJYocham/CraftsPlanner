@@ -10,8 +10,11 @@ namespace CraftsPlanner.Services
 {
     public class CategoryService
     {
+        //private CGroupService _db = new CGroupService();
         public bool CreateCategory(CategoryCreate model)
         {
+            //var cGroup = _db.CGroups.ToArray();
+            //model.CGroups = new SelectList(cgroups, "CGroupId", "Name");
             var entity =
                 new Category()
                 {

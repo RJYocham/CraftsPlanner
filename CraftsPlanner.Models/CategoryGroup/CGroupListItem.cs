@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CraftsPlanner.Models.Category;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,5 +14,7 @@ namespace CraftsPlanner.Models.CategoryGroup
 
         [Display(Name = "Group")]
         public string CGroupName { get; set; }
+
+        public List<CategoryListItem> Categories { get; set; }        
     }
 }
