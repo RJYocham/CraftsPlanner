@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CraftsPlanner.Data;
+using CraftsPlanner.Models.Element;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,96 @@ namespace CraftsPlanner.Services
 {
     public class ElementService
     {
+        public bool CreateProject(ElementCreate model)
+        {
+            var entity =
+                new Element()
+                {
+                    ElementName = model.ElementName,
+                    PGroupId = model.PGroupId
+                };
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Elements.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public IEnumerable<ElementListItem> GetProjects()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Elements
+                        .Select(
+                            e =>
+                                new ElementListItem
+                                {
+                                    ElementId = e.ElementId,
+                                    ElementName = e.ElementName,
+                                    ElementDescription = e.ElementDescription,
+                                    PGroupId = e.PGroupId,
+                                    IsCompleted = e.IsCompleted
+                                }
+                               );
+
+                return query.ToArray();
+            }
+        }
+
+        public ElementDetail GetElementById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Elements
+                        .Single(e => e.ElementId == id);
+                return
+                    new ElementDetail
+                    {
+                        ElementId = entity.ElementId,
+                        ElementName = entity.ElementName,
+                        ElementDescription = entity.ElementDescription,
+                        PGroupId = entity.PGroupId,
+                        IsCompleted = entity.IsCompleted
+                    };
+            }
+        }
+
+        public bool updateElement(ElementEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Elements
+                        .Single(e => e.ElementId == model.ElementId);
+
+                entity.ElementName = model.ElementName;
+                entity.ElementDescription = model.ElementDescription;
+                entity.PGroupId = model.PGroupId;
+                entity.IsCompleted = model.IsCompleted;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteElement(int elementId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Elements
+                        .Single(e => e.ElementId == elementId);
+
+                ctx.Elements.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

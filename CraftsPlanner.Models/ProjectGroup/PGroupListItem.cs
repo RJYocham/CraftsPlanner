@@ -8,5 +8,10 @@ namespace CraftsPlanner.Models.ProjectGroup
 {
     public class PGroupListItem
     {
+        public int PGroupId { get; set; }
+        public string PGroupName { get; set; }
+
+        public int ProjectId { get; set; }
+        //public List<Element> Elements { get; set; }
     }
 }

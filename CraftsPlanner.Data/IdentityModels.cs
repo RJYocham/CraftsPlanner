@@ -35,6 +35,8 @@ namespace CraftsPlanner.Data
         public DbSet<Project> Projects { get; set; }
         public DbSet<CategoryGroup> CGroups { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Element> Elements { get; set; }
+        public DbSet<ProjectGroup> PGroups { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

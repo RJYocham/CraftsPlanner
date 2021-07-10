@@ -8,5 +8,9 @@ namespace CraftsPlanner.Models.ProjectGroup
 {
     public class PGroupEdit
     {
+        public int PGroupId { get; set; }
+        public string PGroupName { get; set; }
+
+        public int ProjectId { get; set; }
     }
 }
