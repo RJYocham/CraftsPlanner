@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 namespace CraftsPlanner.Models.Category
 {
     public class CategoryEdit
-    {
+    {        
         public int CategoryId { get; set; }
-        [Required]
-        [Display(Name = "Category")]
         public string CategoryName { get; set; }
     }
 }
