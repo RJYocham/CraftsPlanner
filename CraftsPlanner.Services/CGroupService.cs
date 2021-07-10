@@ -69,12 +69,11 @@ namespace CraftsPlanner.Services
                     {
                         CGroupId = entity.CGroupId,
                         CGroupName = entity.CGroupName,
-                        Categories = entity.Categories.Select(x => new CategoryDetail 
-                            {  
-                                CategoryName = x.CategoryName 
-                            }).ToList(),
-
-                        //Categories = 
+                        Categories = entity.Categories.Select(x => new CategoryListItem
+                        {
+                            CategoryId = x.CategoryId,
+                            CategoryName = x.CategoryName
+                        }).ToList(),
                     };
             }
         }

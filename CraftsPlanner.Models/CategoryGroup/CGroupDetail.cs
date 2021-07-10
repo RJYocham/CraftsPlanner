@@ -11,6 +11,6 @@ namespace CraftsPlanner.Models.CategoryGroup
     {
         public int CGroupId { get; set; }
         public string CGroupName { get; set; }
-        public IEnumerable<CategoryDetail> Categories { get; set; }
+        public IEnumerable<CategoryListItem> Categories { get; set; }
     }
 }

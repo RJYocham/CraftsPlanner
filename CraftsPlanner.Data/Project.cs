@@ -22,7 +22,7 @@ namespace CraftsPlanner.Data
         public string Source { get; set; }
 
         public List<Category> Categories { get; set; }
-        public List<ToDoGroup> Groups { get; set; }
+        //public List<ToDoGroup> Groups { get; set; }
 
         public DateTimeOffset Created { get; set; }
 

@@ -18,7 +18,9 @@ namespace CraftsPlanner.Services
             var entity =
                 new Category()
                 {
-                    CategoryName = model.CategoryName
+                    CategoryId = model.CategoryId,
+                    CategoryName = model.CategoryName,
+                    CGroupId = model.CGroupId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -39,7 +41,8 @@ namespace CraftsPlanner.Services
                             e =>
                                 new CategoryListItem
                                 {
-                                    CategoryName = e.CategoryName
+                                    CategoryName = e.CategoryName,
+                                    //CGroupId = e.CGroupId
                                 }
                                 );
 
@@ -58,7 +61,9 @@ namespace CraftsPlanner.Services
                 return
                     new CategoryDetail
                     {
-                        CategoryName = entity.CategoryName
+                        CategoryId = entity.CategoryId,
+                        CategoryName = entity.CategoryName,
+                        CGroupId = entity.CGroupId
                     };
             }
         }

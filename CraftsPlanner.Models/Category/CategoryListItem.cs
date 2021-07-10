@@ -8,6 +8,8 @@ namespace CraftsPlanner.Models.Category
 {
     public class CategoryListItem
     {
+        public int CategoryId { get; set; }
         public string CategoryName { get; set; }
+        //public int CGroupId { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using CraftsPlanner.Models.Category;
+﻿using CraftsPlanner.Data;
+using CraftsPlanner.Models.Category;
 using CraftsPlanner.Services;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace CraftsPlanner.WebMVC.Controllers
 
         public ActionResult Create()
         {
+           // List<CategoryGroup> CGroups = (new CGroupService()).GetCGroups().ToList();
             return View();
         }
 

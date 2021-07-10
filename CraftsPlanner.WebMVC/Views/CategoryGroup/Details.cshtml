@@ -26,6 +26,27 @@
             @Html.DisplayFor(model => model.CGroupName)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Categories)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categories)
+        </dd>
+
+        @*@foreach (var item in Model.Categories)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(model => model.Categories)
+                </th>
+
+                <td>
+                    @Html.DisplayNameFor(modelItem => item.CategoryName)
+                </td>
+            </tr>
+        }*@
+
     </dl>
 </div>
 <p>
