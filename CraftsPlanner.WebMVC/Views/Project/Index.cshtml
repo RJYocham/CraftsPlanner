@@ -8,6 +8,8 @@
 
 <p>
     @Html.ActionLink("+New Project", "Create")
+    @Html.ActionLink("Category Group", "Index", "CategoryGroup")
+    @Html.ActionLink("Project Group", "Index", "ProjectGroup")
 </p>
 
 @if (TempData.ContainsKey("SaveResult"))
@@ -21,16 +23,6 @@
     </div>
 }
 
-
-@*put category menu here*@
-@*<div>
-   <h5>
-       Categories
-   </h5>
-    <section>
-        category groups// for each category group - list of categories
-    </section>
-</div>*@
 
 
 

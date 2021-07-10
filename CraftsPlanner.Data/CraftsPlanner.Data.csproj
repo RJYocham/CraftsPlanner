@@ -70,6 +70,10 @@
     <Compile Include="Migrations\202107101728570_dont remember x.x.Designer.cs">
       <DependentUpon>202107101728570_dont remember x.x.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107102230121_added element and project group.cs" />
+    <Compile Include="Migrations\202107102230121_added element and project group.Designer.cs">
+      <DependentUpon>202107102230121_added element and project group.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="ProjectGroup.cs" />
@@ -88,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107101728570_dont remember x.x.resx">
       <DependentUpon>202107101728570_dont remember x.x.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107102230121_added element and project group.resx">
+      <DependentUpon>202107102230121_added element and project group.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
