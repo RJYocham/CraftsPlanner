@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CraftsPlanner.Data.ProjectGroup>
+﻿@model IEnumerable<CraftsPlanner.Models.ProjectGroup.PGroupListItem>
 
 @{
     ViewBag.Title = "Index";
@@ -8,10 +8,12 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
-    @Html.ActionLink("Project Group", "Index", "ProjectGroup")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PGroupId)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.PGroupName)
         </th>
@@ -24,15 +26,18 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.PGroupId)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.PGroupName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ProjectId)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PGroupId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PGroupId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PGroupId })
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>
 }
