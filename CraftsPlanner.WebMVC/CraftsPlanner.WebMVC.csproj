@@ -259,11 +259,11 @@
     <Content Include="Views\Element\Details.cshtml" />
     <Content Include="Views\Element\Edit.cshtml" />
     <Content Include="Views\Element\Delete.cshtml" />
-    <Content Include="Views\PGroup\Index.cshtml" />
-    <Content Include="Views\PGroup\Create.cshtml" />
-    <Content Include="Views\PGroup\Details.cshtml" />
-    <Content Include="Views\PGroup\Edit.cshtml" />
-    <Content Include="Views\PGroup\Delete.cshtml" />
+    <Content Include="Views\ProjectGroup\Index.cshtml" />
+    <Content Include="Views\ProjectGroup\Create.cshtml" />
+    <Content Include="Views\ProjectGroup\Details.cshtml" />
+    <Content Include="Views\ProjectGroup\Edit.cshtml" />
+    <Content Include="Views\ProjectGroup\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

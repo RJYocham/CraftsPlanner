@@ -7,9 +7,11 @@
 <h2>Projects</h2>
 
 <p>
-    @Html.ActionLink("+New Project", "Create")
-    @Html.ActionLink("Category Group", "Index", "CategoryGroup")
-    @Html.ActionLink("Project Group", "Index", "ProjectGroup")
+    <ul>
+        <li>@Html.ActionLink("+New Project", "Create")</li>
+        <li>@Html.ActionLink("Category Group", "Index", "CGroup")</li>
+        <li>@Html.ActionLink("Project Group", "Index", "PGroup")</li>
+    </ul>
 </p>
 
 @if (TempData.ContainsKey("SaveResult"))
@@ -54,9 +56,9 @@
             </td>
             <td>
                 @*move edit to project page*@
-                @Html.ActionLink("Edit", "Edit", new { id=item.ProjectId }) |
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.ProjectId }) |*@
                 @*switch to "project page" instead of details*@
-                @Html.ActionLink("Details", "Details", new { id = item.ProjectId }) |
+                @Html.ActionLink("Project Page", "Details", new { id = item.ProjectId }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.ProjectId })
             </td>
         </tr>

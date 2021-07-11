@@ -10,13 +10,13 @@
     <h4>ProjectDetail</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.ProjectId)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.ProjectId)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.ProjectName)
@@ -35,8 +35,13 @@
         </dd>
 
     </dl>
+    <p>
+        @Html.ActionLink("+List","Create", "ProjectGroup")
+    </p>
 </div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Delete", "Delete", new { id = Model.ProjectId }) |
+    @Html.ActionLink("Back", "Index")
 </p>
