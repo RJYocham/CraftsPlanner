@@ -40,8 +40,8 @@ namespace CraftsPlanner.Services
                                     ElementId = e.ElementId,
                                     ElementName = e.ElementName,
                                     ElementDescription = e.ElementDescription,
-                                    PGroupId = e.PGroupId,
-                                    IsCompleted = e.IsCompleted
+                                    //PGroupId = e.PGroupId,
+                                    //IsCompleted = e.IsCompleted
                                 }
                                );
 

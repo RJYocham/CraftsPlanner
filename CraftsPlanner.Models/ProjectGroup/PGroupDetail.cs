@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CraftsPlanner.Models.Element;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,6 @@ namespace CraftsPlanner.Models.ProjectGroup
         public string PGroupName { get; set; }
 
         public int ProjectId { get; set; }
-        //public List<Element> Elements { get; set; }
+        public IEnumerable<ElementListItem> Elements { get; set; }
     }
 }

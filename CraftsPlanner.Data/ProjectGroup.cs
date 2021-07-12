@@ -15,6 +15,6 @@ namespace CraftsPlanner.Data
         public string PGroupName { get; set; }
 
         public int ProjectId { get; set; }
-        public List<Element> Elements { get; set; }
+        public ICollection<Element> Elements { get; set; }
     }
 }

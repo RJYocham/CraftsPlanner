@@ -1,5 +1,7 @@
 ﻿using CraftsPlanner.Data;
+using CraftsPlanner.Models.Element;
 using CraftsPlanner.Models.Project;
+using CraftsPlanner.Models.ProjectGroup;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,20 +63,29 @@ namespace CraftsPlanner.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
-                    ctx
-                        .Projects
+                    ctx.Projects
                         .Single(e => e.ProjectId == id && e.OwnerId == _userId);
+                entity.Groups = ctx.PGroups?.Where(g => g.ProjectId == id).ToList();
+                foreach (var group in entity.Groups) {
+                    group.Elements = ctx.Elements?.Where(e => e.PGroupId == group.PGroupId).ToList(); 
+                }
+                        
                 return
                     new ProjectDetail
                     {
                         ProjectId = entity.ProjectId,
                         ProjectName = entity.ProjectName,
                         Source = entity.Source,
-                        //Categories = entity.Categories,
-                        //Difficulty = entity.Difficulty,
-                        //Plan = entity.Plan,
-                        //Materials = entity.Materials,
-                        //Cost/Budget = entity.Cost + " / " + entity.Budget,
+                        ProjectGroup = entity.Groups?.Select(x => new PGroupListItem {
+                            PGroupId = x.PGroupId,
+                            PGroupName = x.PGroupName,
+                            ProjectId = x.ProjectId,
+                            Elements = x.Elements?.Select(l => new ElementListItem() {
+                                ElementId = l.ElementId,
+                                ElementName = l.ElementName, 
+                                ElementDescription = l.ElementDescription
+                            }).ToList()
+                        }).ToList()
                     };
             }
         }

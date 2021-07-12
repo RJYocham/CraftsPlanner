@@ -1,4 +1,5 @@
 ﻿using CraftsPlanner.Data;
+using CraftsPlanner.Models.Element;
 using CraftsPlanner.Models.ProjectGroup;
 using System;
 using System.Collections.Generic;
@@ -60,7 +61,13 @@ namespace CraftsPlanner.Services
                     {
                         PGroupId = entity.PGroupId,
                         PGroupName = entity.PGroupName,
-                        ProjectId = entity.ProjectId
+                        ProjectId = entity.ProjectId,
+                        Elements = entity.Elements.Select(x => new ElementListItem
+                        {
+                            ElementId = x.ElementId,
+                            ElementName = x.ElementName,
+                            ElementDescription = x.ElementDescription
+                        }).ToList(),
                     };
             }
         }

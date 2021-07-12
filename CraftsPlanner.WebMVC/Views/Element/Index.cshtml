@@ -17,12 +17,12 @@
         <th>
             @Html.DisplayNameFor(model => model.ElementDescription)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.PGroupId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.IsCompleted)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -34,12 +34,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.ElementDescription)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.PGroupId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.IsCompleted)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ElementId }) |
             @Html.ActionLink("Details", "Details", new { id=item.ElementId }) |
