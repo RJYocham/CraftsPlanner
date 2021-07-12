@@ -39,32 +39,35 @@
 
         @for (int i = 0; i < Model.ProjectGroup?.Count; i++)
         {
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="accordion-@Model.ProjectGroup[i].PGroupId">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                <div class="panel panel-default">
+                <!-- Default panel contents -->
+                    <div class="panel-heading">
                         @Html.ActionLink(linkText: Model.ProjectGroup[i].PGroupName, actionName: "Details", controllerName: "PGroup", htmlAttributes: null, routeValues: new { id = Model.ProjectGroup[i].PGroupId })
+                        @Html.ActionLink(linkText: "Add Element", actionName: "Create", controllerName: "Element", htmlAttributes: null, routeValues: new { ProjectId = Model.ProjectId, PGroupId = Model.ProjectGroup[i].PGroupId})
 
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-@Model.ProjectGroup[i].PGroupId" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-@Model.ProjectGroup[i].PGroupId">
-                    <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                     </div>
-                </div>
+
+                <!-- Table -->
+                <table class="table">
+                    @for (int e = 0; e < Model.ProjectGroup[i]?.Elements?.Count; e++)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(m => m.ProjectGroup[i].Elements[e].ElementName)</td>
+                            <td>@Html.DisplayFor(m => m.ProjectGroup[i].Elements[e].ElementDescription)</td>
+                            <td>@Html.EditorFor(m => m.ProjectGroup[i].Elements[e].IsCompleted)</td>
+                            <td>
+                                @Html.ActionLink(linkText: "Delete", actionName: "Delete", controllerName: "Element", htmlAttributes: null, routeValues: new { ProjectId = Model.ProjectId, id = Model.ProjectGroup[i].Elements[e].ElementId})
+                            </td>
+                        </tr>
+                    }
+                </table>
             </div>
-            @*<dt>
-                @Html.DisplayNameFor(model => model.ProjectGroup[i].PGroupName)
-            </dt>*@
-
-            <!--<dd>-->
-                @*@Html.DisplayFor(model => model.ProjectGroup[i].PGroupName)*@
-                <!--@Html.ActionLink(linkText: Model.ProjectGroup[i].PGroupName, actionName: "Details", controllerName: "PGroup", htmlAttributes: null, routeValues: new { id = Model.ProjectGroup[i].PGroupId })
-            </dd>-->
-
         }
     </div>
+    
     <p>
         @Html.ActionLink(linkText: "Add Project Group", actionName: "Create", controllerName: "PGroup", htmlAttributes: null, routeValues: new { ProjectId = Model.ProjectId })
+
     </p>
 </div>
 

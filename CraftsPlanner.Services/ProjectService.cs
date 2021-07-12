@@ -83,7 +83,8 @@ namespace CraftsPlanner.Services
                             Elements = x.Elements?.Select(l => new ElementListItem() {
                                 ElementId = l.ElementId,
                                 ElementName = l.ElementName, 
-                                ElementDescription = l.ElementDescription
+                                ElementDescription = l.ElementDescription,
+                                IsCompleted = l.IsCompleted
                             }).ToList()
                         }).ToList()
                     };

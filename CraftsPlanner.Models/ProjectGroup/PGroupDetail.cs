@@ -13,6 +13,6 @@ namespace CraftsPlanner.Models.ProjectGroup
         public string PGroupName { get; set; }
 
         public int ProjectId { get; set; }
-        public IEnumerable<ElementListItem> Elements { get; set; }
+        public List<ElementListItem> Elements { get; set; }
     }
 }

@@ -18,9 +18,14 @@ namespace CraftsPlanner.WebMVC.Controllers
             return View(model);
         }
 
-        public ActionResult Create()
+        public ActionResult Create(int ProjectId, int PGroupId)
         {
-            return View();
+            var view = new ElementCreate()
+            {
+                ProjectId = ProjectId,
+                PGroupId = PGroupId
+            };
+            return View(view);
         }
 
         [HttpPost]
@@ -32,13 +37,13 @@ namespace CraftsPlanner.WebMVC.Controllers
 
             if (service.CreateElement(model))
             {
-                TempData["SaveResult"] = "Element was created.";
-                return RedirectToAction("Index");
+                //TempData["SaveResult"] = "Element was created.";
+                //return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Element could not be created.");
+            //ModelState.AddModelError("", "Element could not be created.");
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", "Project", new { id = model.ProjectId });
         }
 
         public ActionResult Details(int id)
@@ -99,12 +104,12 @@ namespace CraftsPlanner.WebMVC.Controllers
 
         [HttpPost]
         [ActionName("Delete")]
-        public ActionResult DeleteElement(int id)
+        public ActionResult DeleteElement(int ProjectId, int id)
         {
             var service = CreateElementService();
             service.DeleteElement(id);
             TempData["SaveResult"] = "Your project was deleted";
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", "Project", new { id = ProjectId });
         }
 
         private ElementService CreateElementService()
