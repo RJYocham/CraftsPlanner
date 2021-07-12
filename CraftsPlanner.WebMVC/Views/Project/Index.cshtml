@@ -37,6 +37,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Source)
         </th>
+        <th>Actions</th>
     </tr>
     
     @foreach (var item in Model)
@@ -55,8 +56,7 @@
                 @*move edit to project page*@
                 @*@Html.ActionLink("Edit", "Edit", new { id=item.ProjectId }) |*@
                 @*switch to "project page" instead of details*@
-                @Html.ActionLink("Project Page", "Details", new { id = item.ProjectId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ProjectId })
+                @Html.ActionLink("Project Page", "Details", new { id = item.ProjectId })
             </td>
         </tr>
     }

@@ -18,9 +18,18 @@ namespace CraftsPlanner.WebMVC.Controllers
             return View(model);
         }
 
-        public ActionResult Create()
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
+
+        public ActionResult Create(int ProjectId)
         {
-            return View();
+            var view = new PGroupCreate()
+            {
+                ProjectId = ProjectId
+            };
+            return View(view);
         }
 
         [HttpPost]
@@ -33,12 +42,12 @@ namespace CraftsPlanner.WebMVC.Controllers
             if (service.CreatePGroup(model))
             {
                 TempData["SaveResult"] = "Your project group was created.";
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
             }
 
             ModelState.AddModelError("", "Project group could not be created.");
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", "Project", new { id = model.ProjectId });
         }
 
         public ActionResult Details(int id)

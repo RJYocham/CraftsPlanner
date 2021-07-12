@@ -62,7 +62,7 @@ namespace CraftsPlanner.Services
                         PGroupId = entity.PGroupId,
                         PGroupName = entity.PGroupName,
                         ProjectId = entity.ProjectId,
-                        Elements = entity.Elements.Select(x => new ElementListItem
+                        Elements = entity.Elements?.Select(x => new ElementListItem
                         {
                             ElementId = x.ElementId,
                             ElementName = x.ElementName,

@@ -37,6 +37,8 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PGroupId }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.PGroupId }) |
+    @*@Html.ActionLink("Back to Project Page", "Details", new { id = Model.ProjectId })*@
+    @Html.ActionLink(linkText: "Back to Project", actionName: "Details", controllerName: "Project", htmlAttributes: null, routeValues: new { id = Model.ProjectId })
 </p>
