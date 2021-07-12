@@ -2,9 +2,6 @@
 using CraftsPlanner.Services;
 using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CraftsPlanner.WebMVC.Controllers
@@ -55,6 +52,8 @@ namespace CraftsPlanner.WebMVC.Controllers
             return View(model);
         }
 
+
+
         public ActionResult Edit(int id)
         {
             var service = CreateProjectService();
@@ -75,7 +74,7 @@ namespace CraftsPlanner.WebMVC.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if(model.ProjectId != id)
+            if (model.ProjectId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
