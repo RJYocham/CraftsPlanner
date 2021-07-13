@@ -65,7 +65,8 @@ namespace CraftsPlanner.Services
                 var entity =
                     ctx.Projects
                         .Single(e => e.ProjectId == id && e.OwnerId == _userId);
-                entity.Groups = ctx.PGroups?.Where(g => g.ProjectId == id).ToList();
+                entity.Groups = ctx.PGroups?
+                    .Where(g => g.ProjectId == id).ToList();
                 foreach (var group in entity.Groups) {
                     group.Elements = ctx.Elements?.Where(e => e.PGroupId == group.PGroupId).ToList(); 
                 }

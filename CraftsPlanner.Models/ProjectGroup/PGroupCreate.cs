@@ -10,6 +10,7 @@ namespace CraftsPlanner.Models.ProjectGroup
     public class PGroupCreate
     {
         [Required]
+        [Display(Name = "List")]
         public string PGroupName { get; set; }
         public int ProjectId { get; set; }
     }

@@ -6,15 +6,16 @@
 
 <h2>Delete</h2>
 
-<h3>Are you sure you want to delete @Html.DisplayFor(model => model.ProjectName)?</h3>
+<h3>Are you sure you want to delete the project "@Html.DisplayFor(model => model.ProjectName)"?</h3>
 <h4 style="color:red">This action cannot be undone.</h4>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+<div class="form-actions no-color">
+    <input type="submit" value="Delete" class="btn btn-default" /> |
+    @Html.ActionLink(linkText: "Back", actionName: "Details", controllerName: "Project", htmlAttributes: null, routeValues: new { id = Model.ProjectId })
+
+</div>
     }
 </div>

@@ -37,11 +37,11 @@ namespace CraftsPlanner.WebMVC.Controllers
 
             if (service.CreatePGroup(model))
             {
-                TempData["SaveResult"] = "Your project group was created.";
+                //TempData["SaveResult"] = "Your project group was created.";
                 //return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Project group could not be created.");
+            //ModelState.AddModelError("", "Project group could not be created.");
 
             return RedirectToAction("Details", "Project", new { id = model.ProjectId });
         }
@@ -75,8 +75,8 @@ namespace CraftsPlanner.WebMVC.Controllers
 
             if (model.PGroupId != id)
             {
-                ModelState.AddModelError("", "Id Mismatch");
-                return View(model);
+                //ModelState.AddModelError("", "Id Mismatch");
+                //return View(model);
             }
 
             var service = CreatePGroupService();
@@ -84,11 +84,11 @@ namespace CraftsPlanner.WebMVC.Controllers
             if (service.updatePGroup(model))
             {
                 TempData["SaveResult"] = "Your project group was updated.";
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "Project", new { id = model.ProjectId });
             }
 
             ModelState.AddModelError("", "Your project group cold not be updated.");
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", "Project", new { id = model.ProjectId });
         }
 
         [ActionName("Delete")]
@@ -102,12 +102,12 @@ namespace CraftsPlanner.WebMVC.Controllers
 
         [HttpPost]
         [ActionName("Delete")]
-        public ActionResult DeletePGroup(int id)
+        public ActionResult DeletePGroup(int ProjectId, int id)
         {
             var service = CreatePGroupService();
             service.DeletePGroup(id);
             TempData["SaveResult"] = "Your project group was deleted";
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", "Project", new { id = ProjectId });
         }
 
         private PGroupService CreatePGroupService()
