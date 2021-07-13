@@ -12,6 +12,7 @@ namespace CraftsPlanner.Models.Project
         public int ProjectId { get; set; }
 
         [Required]
+        [Display(Name ="Project")]
         public string ProjectName { get; set; }
 
         [Required]

@@ -10,6 +10,7 @@ namespace CraftsPlanner.Models.Project
     public class ProjectCreate
     {
         [Required]
+        [Display(Name ="Project")]
         public string ProjectName { get; set; }
         [Required]
         public string Source { get; set; }
