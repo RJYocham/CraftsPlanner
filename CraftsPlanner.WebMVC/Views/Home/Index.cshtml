@@ -10,14 +10,14 @@
         My goal is to make a crafting oriented planning app that will allow me to keep track of all my progress and budgeting, as well as a way to organize my ideas in a way that works for me.
     </p>
     <br />
-    <p class="btn btn-default">
+    <p>
         @if (User.Identity.IsAuthenticated)
         {
-            @Html.ActionLink("Start Planning!", "Index", "Project")
+            @Html.ActionLink("Start Planning!", "Index", "Project", new { area = "" }, new { @class = "btn btn-default" })
         }
         else
         {
-            @Html.ActionLink("Start Planning!", "Login", "Account");
+            @Html.ActionLink("Start Planning!", "Login", "Account", new { area = "" }, new { @class = "btn btn-default" });
         }
     </p>
 
