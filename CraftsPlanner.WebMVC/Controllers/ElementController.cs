@@ -57,6 +57,7 @@ namespace CraftsPlanner.WebMVC.Controllers
             var model =
                 new ElementEdit
                 {
+                    ProjectId = detail.ProjectId,
                     ElementId = detail.ElementId,
                     ElementName = detail.ElementName,
                     ElementDescription = detail.ElementDescription,
@@ -73,8 +74,8 @@ namespace CraftsPlanner.WebMVC.Controllers
 
             if (model.ElementId != id)
             {
-                ModelState.AddModelError("", "Id Mismatch");
-                return View(model);
+                //ModelState.AddModelError("", "Id Mismatch");
+                //return View(model);
             }
 
             var service = CreateElementService();
@@ -82,11 +83,11 @@ namespace CraftsPlanner.WebMVC.Controllers
             if (service.updateElement(model))
             {
                 TempData["SaveResult"] = "Your project was updated.";
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "Project", new { id = model.ProjectId });
             }
 
             ModelState.AddModelError("", "Your project cold not be updated.");
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", "Project", new { id = model.ProjectId });
         }
 
         [ActionName("Delete")]

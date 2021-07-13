@@ -85,7 +85,9 @@ namespace CraftsPlanner.Services
                                 ElementId = l.ElementId,
                                 ElementName = l.ElementName, 
                                 ElementDescription = l.ElementDescription,
-                                IsCompleted = l.IsCompleted
+                                IsCompleted = l.IsCompleted,
+                                //ProjectId = l.ProjectId,
+                                //PGroupId = l.PGroupId
                             }).ToList()
                         }).ToList()
                     };

@@ -16,6 +16,7 @@ namespace CraftsPlanner.Services
                 new Element()
                 {
                     ElementName = model.ElementName,
+                    ProjectId = model.ProjectId,
                     PGroupId = model.PGroupId
                 };
 
@@ -63,6 +64,7 @@ namespace CraftsPlanner.Services
                         ElementId = entity.ElementId,
                         ElementName = entity.ElementName,
                         ElementDescription = entity.ElementDescription,
+                        ProjectId = entity.ProjectId,
                         PGroupId = entity.PGroupId,
                         IsCompleted = entity.IsCompleted
                     };
@@ -78,6 +80,7 @@ namespace CraftsPlanner.Services
                         .Elements
                         .Single(e => e.ElementId == model.ElementId);
 
+                entity.ProjectId = model.ProjectId;
                 entity.ElementName = model.ElementName;
                 entity.ElementDescription = model.ElementDescription;
                 entity.PGroupId = model.PGroupId;

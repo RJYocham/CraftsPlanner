@@ -16,6 +16,8 @@ namespace CraftsPlanner.Models.Element
         public string ElementName { get; set; }
         public string ElementDescription { get; set; }
         public int PGroupId { get; set; }
+        public int ProjectId { get; set; }
+
         [Display(Name = "Completed?")]
         public bool IsCompleted { get; set; }
     }

@@ -78,6 +78,10 @@
     <Compile Include="Migrations\202107111654360_pgroup display element list.Designer.cs">
       <DependentUpon>202107111654360_pgroup display element list.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107131411434_fixing things.cs" />
+    <Compile Include="Migrations\202107131411434_fixing things.Designer.cs">
+      <DependentUpon>202107131411434_fixing things.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="ProjectGroup.cs" />
@@ -102,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107111654360_pgroup display element list.resx">
       <DependentUpon>202107111654360_pgroup display element list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107131411434_fixing things.resx">
+      <DependentUpon>202107131411434_fixing things.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
