@@ -4,14 +4,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Projects</h2>
+<h2>Planner</h2>
+
 
 <p>
-    <ul>
-        <li>@Html.ActionLink("+New Project", "Create")</li>
-        <li>@Html.ActionLink("Categories", "Index", "CategoryGroup")</li>
-    </ul>
+    @Html.ActionLink("+New Project", "Create")
 </p>
+@*<p>
+    @Html.ActionLink("Categories", "Index", "CategoryGroup")
+</p>*@
 
 @if (TempData.ContainsKey("SaveResult"))
 {
@@ -25,40 +26,38 @@
 }
 
 
-
-<table class="table table-hover">
-    <tr>
-        @*<th>
-            @Html.DisplayNameFor(model => model.ProjectId)
-        </th>*@
-        <th>
-            @Html.DisplayNameFor(model => model.ProjectName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Source)
-        </th>
-        <th>Actions</th>
-    </tr>
-    
-    @foreach (var item in Model)
-    {
+<div>
+    <table class="table table-hover">
         <tr>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.ProjectId)
-            </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjectName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Source)
-            </td>
-            <td>
-                @*move edit to project page*@
-                @*@Html.ActionLink("Edit", "Edit", new { id=item.ProjectId }) |*@
-                @*switch to "project page" instead of details*@
-                @Html.ActionLink("Project Page", "Details", new { id = item.ProjectId })
-            </td>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.ProjectId)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Source)
+            </th>
+            <th>@*Actions*@</th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.ProjectId)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Source)
+                </td>
+                <td>
+                    @Html.ActionLink("View", "Details", new { id = item.ProjectId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

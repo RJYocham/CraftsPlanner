@@ -10,7 +10,11 @@ namespace CraftsPlanner.Models.Category
     public class CategoryEdit
     {        
         public int CategoryId { get; set; }
+
+        [Required]
         public string CategoryName { get; set; }
+
+        [Required]
         public int CGroupId { get; set; }
     }
 }

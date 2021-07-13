@@ -35,7 +35,7 @@ namespace CraftsPlanner.WebMVC.Controllers
 
             if (service.CreateProject(model))
             {
-                TempData["SaveResult"] = "Your project was created.";
+                TempData["SaveResult"] = model.ProjectName + " was created.";
                 return RedirectToAction("Index");
             }
 
@@ -84,11 +84,11 @@ namespace CraftsPlanner.WebMVC.Controllers
 
             if (service.updateProject(model))
             {
-                TempData["SaveResult"] = "Your project was updated.";
+                TempData["SaveResult"] = model.ProjectName + " was updated.";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Your project cold not be updated.");
+            ModelState.AddModelError("", model.ProjectName + " could not be updated.");
             return RedirectToAction("Index");
         }
 

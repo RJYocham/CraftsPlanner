@@ -11,6 +11,7 @@ namespace CraftsPlanner.Models.Project
     {
         [Required]
         public string ProjectName { get; set; }
+        [Required]
         public string Source { get; set; }
         //public List<Category> Categories { get; set; }
     }
