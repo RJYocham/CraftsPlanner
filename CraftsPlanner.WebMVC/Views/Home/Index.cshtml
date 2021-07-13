@@ -3,27 +3,50 @@
 }
 
 <div class="jumbotron">
-    <h1>Craft Planner</h1>
-    <p class="lead">Craft Planner is an application meant to help organize your next project! Plan as in depth as you'd like, track progress, set goals, and show off your finished piece!</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>Rhi-Create</h1>
+    <h6>(title pending)</h6>
+    <p class="lead">
+        As someone who loves to obsessively plan and organize my crafting projects, none of the other planning apps I've tried have all the features I want and enjoy in one place.
+        My goal is to make a crafting oriented planning app that will allow me to keep track of all my progress and budgeting, as well as a way to organize my ideas in a way that works for me.
+    </p>
+    <br />
+    <p class="btn btn-default">
+        @if (User.Identity.IsAuthenticated)
+        {
+            @Html.ActionLink("Start Planning!", "Index", "Project")
+        }
+        else
+        {
+            @Html.ActionLink("Start Planning!", "Login", "Account");
+        }
+    </p>
+
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Upcoming Features</h2>
         <p>
-            Create an account and start planning!
+            There are many features I'm looking forward to adding to my planner!
+            Check out my features roadmap here~
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p class="btn btn-default">
+            //features
+        </p>
     </div>
     <div class="col-md-4">
-        <h2>Public tutorials</h2>
-        <p>See what others have made and how to do it yourself! You can also share your own projects for others to try!</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Profile</h2>
+        <p>More by Rhiannan here~</p>
+        <p><a class="btn btn-default" href="#">Portfolio &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Events</h2>
-        <p>Check out upcoming events near you to network or sell your crafts</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>List-ception</h2>
+        <p>
+            In its current state, this project is a list maker where you can make lists of lists within lists.
+            Read more about its functionality here~
+        </p>
+        <p class="btn btn-default">
+            //Rhi'd Me
+        </p>
     </div>
 </div>
