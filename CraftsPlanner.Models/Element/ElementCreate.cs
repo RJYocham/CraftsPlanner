@@ -10,9 +10,11 @@ namespace CraftsPlanner.Models.Element
     public class ElementCreate
     {
         [Required]
+        [Display(Name ="Task")]
         public string ElementName { get; set; }
         public int ProjectId { get; set; }
         public int PGroupId { get; set; }
+        [Display(Name = "Completed?")]
         public bool IsCompleted { get; set; }
     }
 }

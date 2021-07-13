@@ -32,25 +32,29 @@
             <div class="panel panel-default">
                 <!-- Default panel contents -->
                 <div class="panel-heading">
-
-                    <span>@Html.ActionLink(linkText: Model.ProjectGroup[i].PGroupName, actionName: "Details", controllerName: "PGroup", htmlAttributes: null, routeValues: new { id = Model.ProjectGroup[i].PGroupId })</span>
+                    <span>
+                        @Html.DisplayFor(model => model.ProjectGroup[i].PGroupName)
+                    </span>
                     <span style="float:right">
                         @Html.ActionLink(linkText: "Edit", actionName: "Edit", controllerName: "PGroup", htmlAttributes: null, routeValues: new { ProjectId = Model.ProjectId, id = Model.ProjectGroup[i].PGroupId }) |
                         @Html.ActionLink(linkText: "Delete", actionName: "Delete", controllerName: "PGroup", htmlAttributes: null, routeValues: new { ProjectId = Model.ProjectId, id = Model.ProjectGroup[i].PGroupId }) |
-                        @Html.ActionLink(linkText: "Add Element", actionName: "Create", controllerName: "Element", htmlAttributes: null, routeValues: new { ProjectId = Model.ProjectId, PGroupId = Model.ProjectGroup[i].PGroupId })
+                        @Html.ActionLink(linkText: "Add Task", actionName: "Create", controllerName: "Element", htmlAttributes: null, routeValues: new { ProjectId = Model.ProjectId, PGroupId = Model.ProjectGroup[i].PGroupId })
                     </span>
 
                 </div>
 
                 <!-- Table -->
-                <table class="table-hover">
+                <table class="table">
                     @for (int e = 0; e < Model.ProjectGroup[i]?.Elements?.Count; e++)
                     {
+                    @*<span>@Html.DisplayFor(m => m.ProjectGroup[i].Elements[e].ElementName)</span>
+                    <span>@Html.DisplayFor(m => m.ProjectGroup[i].Elements[e].ElementDescription)</span>
+                    <span style="float:right">*@
+                        
                         <tr>
-                            @*<td>@Html.EditorFor(m => m.ProjectGroup[i].Elements[e].IsCompleted)</td>*@
                             <td>@Html.DisplayFor(m => m.ProjectGroup[i].Elements[e].ElementName)</td>
-                            <td>@Html.DisplayFor(m => m.ProjectGroup[i].Elements[e].ElementDescription)</td>
                             <td style="float:right">
+                                @Html.ActionLink(linkText: "Edit", actionName: "Edit", controllerName: "Element", htmlAttributes: null, routeValues: new { ProjectId = Model.ProjectId, id = Model.ProjectGroup[i].Elements[e].ElementId }) |
                                 @Html.ActionLink(linkText: "Delete", actionName: "Delete", controllerName: "Element", htmlAttributes: null, routeValues: new { ProjectId = Model.ProjectId, id = Model.ProjectGroup[i].Elements[e].ElementId })
                             </td>
                         </tr>

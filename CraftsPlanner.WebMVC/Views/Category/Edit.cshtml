@@ -48,7 +48,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(linkText: "Back", actionName: "Details", controllerName: "Project", htmlAttributes: null, routeValues: new { id = Model.ProjectId })
 </div>
 
 @section Scripts {
