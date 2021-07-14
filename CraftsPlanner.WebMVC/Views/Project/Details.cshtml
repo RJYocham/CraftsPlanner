@@ -52,8 +52,22 @@
                     <span style="float:right">*@
                         
                         <tr>
+                            @if(Model.ProjectGroup[i].Elements[e].IsCompleted == true)
+                    {
+                            <td style="width:20px; color:lawngreen" >
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            </td>
+                    }
+                    else
+                    {
+                        <td style="width:20px;">
+                            <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+
+                        </td>
+                    }
                             <td>@Html.DisplayFor(m => m.ProjectGroup[i].Elements[e].ElementName)</td>
                             <td style="float:right">
+
                                 @Html.ActionLink(linkText: "Edit", actionName: "Edit", controllerName: "Element", htmlAttributes: null, routeValues: new { ProjectId = Model.ProjectId, id = Model.ProjectGroup[i].Elements[e].ElementId }) |
                                 @Html.ActionLink(linkText: "Delete", actionName: "Delete", controllerName: "Element", htmlAttributes: null, routeValues: new { ProjectId = Model.ProjectId, id = Model.ProjectGroup[i].Elements[e].ElementId })
                             </td>
