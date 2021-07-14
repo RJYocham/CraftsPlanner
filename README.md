@@ -23,7 +23,7 @@ Eventually I would like to add the ability to organize projects by assigned cate
 https://craftsplannermvc.azurewebsites.net/
 
 #### Trello
-https://trello.com/b/M5fPER4p/final-project-costume-planner
+https://trello.com/b/M5fPER4p/final-project-planner
 
 #### Github repo
 https://github.com/RJYocham/CraftsPlanner.git
